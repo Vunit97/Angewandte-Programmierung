@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mein Konto</title>
+	<link rel="stylesheet" type="text/css" href="../styles/myAccount.css">
+</head>
+<body>
+	<div class="gridwrapper">
+			<a class="logoutlink" href="/logout">Abmelden</a>
+		<div class="header">
+
+			<h1 class="logo">Verleih123</h1>
+		</div>
+		<h2 class="headerName">Ihre Kontoeinstellungen | <%=accountName%></h2>
+		<ul class="links">
+			<li><a href="/user/personaldata">Meine Geräte</a></li>
+			
+			<li><a href="/user/passwordChange">Passwort ändern</a></li>
+			<% if(adminAuth) { %>
+				
+			<li><a href="/admin/upload">Gerät hinzufügen</a></li>
+
+				
+			<% } %> 
+
+		</ul>
+		<div class="buttons">
+			<form action="/logout" method="get">
+				<button>ABMELDEN</button>	
+			</form>
+		</div>
+		<div class="homelink">
+			<a href="/">STARTSEITE<a>
+		</div>
+	</div>
+</body>
+</html>

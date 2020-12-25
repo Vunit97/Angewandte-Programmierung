@@ -1,0 +1,4 @@
+// ADMIN ZUGANG
+
+Für den Adminzugang muss ein Account mit den Benutzernamen 'admin' erstellt werden. Das Passwort spielt keine Rolle.
+Nur der Admin kann Geräte hinzufügen!

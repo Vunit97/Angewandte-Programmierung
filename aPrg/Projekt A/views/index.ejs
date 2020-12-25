@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../styles/main.css">
+
+	<title>Verleih123</title>
+
+</head>
+<body>
+
+	<div class="topline">
+
+		<!--Check for user authentication-->
+
+		<% if(!userAuth) { %>
+			
+			<a href="/user/register">Registrieren</a>
+			<a href="/user/login">Anmelden</a>
+
+		<% } else { %>
+			
+			<a href="/logout">Abmelden</a>
+
+
+		<% } %>
+	</div>
+
+	<div class="navigation">
+		<header>
+			<h1 class="logo">Verleih123</h1>
+		</header>
+
+		<div class="user">
+			<div>
+
+				<!--Check for user authentication-->
+
+				<% if(userAuth) { %>
+			
+					<a href="user/myaccount">Mein Konto</a>
+
+				<% } %>
+				
+			</div>
+		</div>
+	</div>
+
+	<div class="devices">
+
+		<% for(let i = 0; i < devices.length; i++) { %>
+
+			<a href="/viewDevice/<%=devices[i]._id%>">
+				<img src="uploads\<%= devices[i].imageName[0] %>" height="100" width="100">
+
+				<% if(devices[i].isRented) { %>
+					<p>Nicht verfügbar.</p>						
+				<% } else { %>
+					<p>Ausleihen für <%=devices[i].price%> €/pro Tag</p>
+				<%}%>
+
+			</a>
+			
+
+		    
+		<% } %>
+
+	</div>
+</body>
+</html>

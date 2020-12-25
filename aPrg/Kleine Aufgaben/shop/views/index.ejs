@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Shop</title>
+    </head>
+    <body>
+		<h1>Liste der verfügbaren Artikel</h1>
+		<ul>
+			<% for(var i=0; i < artikelliste.length; i++){ %>
+				<li> <%= artikelliste[i].artikel %>: 
+						<%= artikelliste[i].preis %>   
+				</li>
+			<% } %>
+		</ul>
+		<a href="/create">neuer Artikel</a>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+	<link rel="stylesheet" type="text/css" href="../styles/register.css">
+</head>
+<body>	
+	<div class="gridwrapper">
+	<div class="header">
+	<header>
+		<nav>
+		<h1 class="logo">Verleih123</h1>
+			<ul>
+				
+			</ul>
+		</nav>	
+	</header>
+	</div>
+		<div class="errors">
+				<ul>
+					<% for(var i = 0; i < error.length; i++) { %>
+						<li> <%=error[i]%></li>
+					<% } %>	
+				</ul>
+
+				<%= on %>
+		</div>		
+		<div class="formular">
+			<form action="/user/registerverify" method="post">
+			<div class="inputs">
+				<div class="headline">
+					<h2>Erstellen Sie ein Benutzerkonto!</h2>
+				</div>
+				<div class="username"><input type="text" name="username" placeholder="Benutzername"></div>
+				<div class="email">
+					<input type="email" name="email" placeholder="E-mail">
+				</div>
+				<div class="password">
+					<input type="password" name="password" placeholder="Password">
+				</div>
+				<div class="passwordrepeat">
+					<input type="password" name="passwordrepeat" placeholder="Passwort wiederholen">
+				</div>
+				<div class="adress">
+					<input type="text" name="adress" placeholder="Straße">
+					<div class="number">
+						<input type="text" name="adressNr" placeholder="Nr.">
+					</div>
+				</div>
+				<div class="place">
+					<input type="text" name="place" placeholder="Ort">
+					<div class="plz">
+						<input type="text" name="plz" placeholder="PLZ">
+					</div>
+				</div>
+				<div class="submitbutton">
+					<button type="submit">REGISTRIEREN</button>
+				</div>
+			</form>
+			<div class="links">
+				<a href="/user/login">Back to login</a>
+				<a href="/">Back to Home</a>
+			</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

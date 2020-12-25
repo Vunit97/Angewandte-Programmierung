@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gerät</title>
+	<link rel="stylesheet" type="text/css" href="../styles/viewDevice.css">
+</head>
+<body>
+	<div class="gridwrapper">
+		<div class="loginlink">
+		<% if(!userAuth) { %>
+			<a href="../user/login">Anmelden</a>
+		<% } %>
+		</div>
+		<div class="header1">
+			<h1 class="logo">Verleih123</h1>
+		</div>
+		<div class="accountLink">
+			<% if(userAuth) { %>
+				<a href="../user/myaccount">Mein Konto</a>
+		 	<% } %>
+		</div>
+		<div class="picture">
+			<img src="..\uploads\<%= device.imageName[0] %>" width="300" height="300">
+		</div>
+		<div class="description">
+			<p class="name"><%= device.deviceName %></p><br>
+			<p>Preis: <br><br><%= device.price %> € / Tag</p><br>
+			<p>Beschreibung: <br><br><%= device.description %></p>
+			<br>
+			<br>
+			<form method="post"  action="/user/rentDevice/<%=device._id%>">
+				<% if(!device.isRented) { %> 
+				
+				<select name="days" >
+					<option value="1">1 Tag</option>
+					<option value="3">3 Tage</option>
+					<option value="7">1 Woche</option>
+					<option value="14">2 Wochen</option>
+					<option value="31">1 Monat</option>
+				</select>
+				<br><br><br>
+				<button type="submit">AUSLEIHEN</button>
+				<%} else {%>
+					<p>Derzeit nicht verfügbar</p>
+				<% } %>
+			</form>
+		</div>
+		<div class="linkToStart">
+			<a href="/">STARTSEITE</a>
+		</div>
+	</div>
+</body>
+</html>
